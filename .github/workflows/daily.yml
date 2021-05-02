@@ -3,13 +3,10 @@ name: Daily cron jobs
 on:
   schedule:
     - cron: "0 0 * * *" # every day at midnight
-  push:
-    branches: 
-      - main
 
 jobs:
-  backupsukusukuseparuh:
-    name: backup
+  backup-sukusukuseparuh:
+    name: Backup SukuSukuSeparuh
     runs-on: ubuntu-latest
     steps:
       - name: Checkout fork
