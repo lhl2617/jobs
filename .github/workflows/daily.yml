@@ -1,0 +1,25 @@
+name: Daily cron jobs 
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # every day at midnight
+  push:
+    branches: 
+      - main
+
+jobs:
+  backup-suku-suku-separuh:
+    name: backup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout fork
+        uses: actions/checkout@v2
+        with:
+          repository: lhl2617/SukuSukuSeparuh
+          token: ${{ secrets.GH_ACCESS_TOKEN }}
+      - name: Make new branch and push
+        run: |
+          export BRANCH_NAME=$(date '+%Y%m%d-%H%M%S')
+          git branch $BRANCH_NAME
+          git checkout $BRANCH_NAME
+          git push --set-upstream origin $BRANCH_NAME
