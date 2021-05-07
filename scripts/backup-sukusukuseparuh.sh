@@ -6,7 +6,7 @@ set -e
 cd "$(dirname "$0")"
 
 # Clone repo
-git clone "https://lhl2617:$GH_ACCESS_TOKEN@github.com/lhl2617/SukuSukuSeparuh"
+git clone "https://$GH_ACCESS_TOKEN:x-oauth-basic@github.com/lhl2617/SukuSukuSeparuh"
 # cd into repo
 cd SukuSukuSeparuh
 # Find the latest backup branch name
@@ -15,7 +15,7 @@ last_backup_branch=$(git branch -a |
     # trim whitespace
     xargs -L1 echo |
     # filter out non-backup branches
-    grep -E "^remotes/origin/[0-9]{8}-[0-9]{6}" |
+    grep -E "^remotes/origin/[0-9]{8}-[0-9]{6}$" |
     # sort
     sort |
     # take last entry
