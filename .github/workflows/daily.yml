@@ -12,6 +12,8 @@ jobs:
     name: Backup SukuSukuSeparuh
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
       - name: Run script
         run: ./scripts/backup-sukusukuseparuh.sh
         env:
