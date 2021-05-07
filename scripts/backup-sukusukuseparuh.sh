@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 set -e
 
 # Ensure we're in the current script's folder
