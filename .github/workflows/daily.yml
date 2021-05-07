@@ -3,6 +3,9 @@ name: Daily cron jobs
 on:
   schedule:
     - cron: "0 0 * * *" # every day at midnight
+  push:
+    branches: 
+      - main
 
 jobs:
   backup-sukusukuseparuh:
