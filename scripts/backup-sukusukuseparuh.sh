@@ -6,7 +6,7 @@ set -e
 cd "$(dirname "$0")"
 
 # Clone repo
-git clone "https://lhl2617:$GH_ACCESS_TOKEN@github.com/lhl2617/SukuSukuSeparuh.git"
+git clone "https://$GH_ACCESS_TOKEN:x-oauth-basic@github.com/lhl2617/SukuSukuSeparuh.git"
 # cd into repo
 cd SukuSukuSeparuh
 # Find the latest backup branch name
