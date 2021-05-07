@@ -15,6 +15,6 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
       - name: Run script
-        run: sudo ./scripts/backup-sukusukuseparuh.sh
+        run: sudo bash ./scripts/backup-sukusukuseparuh.sh
         env:
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
